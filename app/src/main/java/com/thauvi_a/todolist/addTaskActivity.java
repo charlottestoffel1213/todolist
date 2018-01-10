@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class addTaskActivity extends AppCompatActivity {
     private FirebaseDatabase db;
-    private DatabaseReference myRef;
+    DatabaseReference myRef;
     EditText editText;
 
     @Override
