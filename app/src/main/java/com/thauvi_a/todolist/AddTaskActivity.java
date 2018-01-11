@@ -3,6 +3,7 @@ package com.thauvi_a.todolist;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
@@ -17,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
  * ******************************
  */
 
-public class addTaskActivity extends AppCompatActivity {
+public class AddTaskActivity extends AppCompatActivity {
     private FirebaseDatabase db;
     DatabaseReference myRef;
     EditText editText;
@@ -26,8 +27,15 @@ public class addTaskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_task);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_task, menu);
+        return true;
     }
 
     @Override
@@ -43,6 +51,7 @@ public class addTaskActivity extends AppCompatActivity {
             myRef = db.getInstance().getReference().child("Task");
             DatabaseReference newTask = myRef.push();
             newTask.child("name").setValue(desc);
+            AddTaskActivity.this.finish();
             return true;
         }
 

@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".addTaskActivity"
+            android:name=".AddTaskActivity"
             android:label="@string/add_task_name_activity"
             android:theme="@style/AppTheme">
         </activity>
