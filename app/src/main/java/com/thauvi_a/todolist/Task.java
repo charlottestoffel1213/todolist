@@ -10,11 +10,11 @@ package com.thauvi_a.todolist;
 
 public class    Task {
     private     String name;
-    private     String time;
+    private     String date;
 
-    public Task(String name, String time){
+    public Task(String name, String date){
         this.name = name;
-        this.time = time;
+        this.date = date;
     }
 
     public Task(){
@@ -29,11 +29,11 @@ public class    Task {
     }
 
 
-    public String getTime() {
-        return time;
+    public String getDate() {
+        return date;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setDate(String date) {
+        this.date = date;
     }
 }

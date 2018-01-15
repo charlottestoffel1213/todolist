@@ -59,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        public void setTime(String time)
+        public void setDate(String date)
         {
-            TextView task_time = itemView.findViewById(R.id.task_time);
-            task_time.setText(time);
+            TextView task_date = itemView.findViewById(R.id.task_date);
+            task_date.setText(date);
         }
     }
 
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(TaskViewHolder holder, int position, Task model) {
                 holder.setName(model.getName());
-                holder.setTime(model.getTime());
+                holder.setDate(model.getDate());
 
             }
 
