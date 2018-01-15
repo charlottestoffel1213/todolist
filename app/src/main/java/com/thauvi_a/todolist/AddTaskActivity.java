@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.google.firebase.database.DatabaseReference;
@@ -44,6 +45,7 @@ public class AddTaskActivity extends AppCompatActivity {
 
     public static class TimePickerFragment extends DialogFragment
             implements TimePickerDialog.OnTimeSetListener {
+        TextView textView;
 
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -58,7 +60,7 @@ public class AddTaskActivity extends AppCompatActivity {
         }
 
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-            // Do something with the time chosen by the user
+
         }
     }
 
@@ -69,6 +71,7 @@ public class AddTaskActivity extends AppCompatActivity {
 
     public static class DatePickerFragment extends DialogFragment
             implements DatePickerDialog.OnDateSetListener {
+        TextView textView;
 
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -83,7 +86,6 @@ public class AddTaskActivity extends AppCompatActivity {
         }
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
-            // Do something with the date chosen by the user
         }
     }
 
