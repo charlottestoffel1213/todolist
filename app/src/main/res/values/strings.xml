@@ -13,6 +13,7 @@
     <string name="save">save</string>
     <string name="title">What is to be done</string>
     <string name="date">Due date</string>
+    <string name="time">Due time</string>
     <string name="notif">Notifications</string>
 
 
