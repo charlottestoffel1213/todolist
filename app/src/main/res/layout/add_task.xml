@@ -19,4 +19,55 @@
         android:id="@+id/desc"
         android:hint="@string/desc"/>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="299dp">
+
+        <ImageButton
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ic_date_range_black_24dp"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            android:onClick="showTimePickerDialog" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/date"
+            android:layout_marginTop="19dp"
+            android:hint="@string/date"
+            android:textSize="25sp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/date"
+            android:layout_below="@+id/date"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ic_access_time_black_36dp"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            android:onClick="showDatePickerDialog"
+            android:id="@+id/imageButton" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/imageButton"
+            android:layout_marginTop="13dp"
+            android:hint="@string/time"
+            android:textSize="25sp" />
+
+
+    </RelativeLayout>
+
+
+
 </LinearLayout>
