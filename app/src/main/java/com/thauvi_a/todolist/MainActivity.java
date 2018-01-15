@@ -65,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        /*public void setTime(String time)
+        public void setTime(String time)
         {
             TextView task_time = itemView.findViewById(R.id.task_time);
             task_time.setText(time);
-        }*/
+        }
     }
 
     FirebaseRecyclerOptions<Task> options =
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onBindViewHolder(TaskViewHolder holder, int position, Task model) {
             holder.setName(model.getName());
             Log.d("BIND", "onBindViewHolder: pass");
-            //holder.setTime(model.getTime());
+            holder.setTime(model.getTime());
 
         }
 
