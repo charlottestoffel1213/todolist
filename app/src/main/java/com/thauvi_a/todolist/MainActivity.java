@@ -36,19 +36,14 @@ public class MainActivity extends AppCompatActivity {
         mTaskList.setLayoutManager(new LinearLayoutManager(this));
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Tasks");
 
-        Log.d("CREATE", "onCreate: " );
-
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AddTaskActivity.class);
                 startActivity(intent);
-
             }
         });
-
-
 
     }
 
@@ -71,52 +66,55 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    FirebaseRecyclerOptions<Task> options =
-            new FirebaseRecyclerOptions.Builder<Task>()
-                    .setQuery(mDatabase, Task.class)
-                    .build();
 
-    final FirebaseRecyclerAdapter<Task, TaskViewHolder> array = new FirebaseRecyclerAdapter<Task, TaskViewHolder>(options) {
 
-        @Override
-        public int getItemCount() {
-            Log.d("NB", "getItemCount: " + super.getItemCount());
-            return super.getItemCount();
-        }
-
-        @Override
-        protected void onBindViewHolder(TaskViewHolder holder, int position, Task model) {
-            holder.setName(model.getName());
-            Log.d("BIND", "onBindViewHolder: pass");
-            holder.setTime(model.getTime());
-
-        }
-
-        @Override
-        public TaskViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_row,
-                    parent, false);
-            Log.d("CREATE", "onCreate: pass");
-
-            return new TaskViewHolder(view);
-        }
-    };
+/*
+    public FirebaseRecyclerAdapter<Task, TaskViewHolder> getArray()
+    {
+        return this.array;
+    }*/
 
     @Override
     protected void onStart() {
         super.onStart();
         Log.d("POS", "onStart: ");
 
+        FirebaseRecyclerOptions<Task> options =
+                new FirebaseRecyclerOptions.Builder<Task>()
+                        .setQuery(mDatabase, Task.class)
+                        .build();
 
+        final FirebaseRecyclerAdapter<Task, TaskViewHolder> array = new FirebaseRecyclerAdapter<Task, TaskViewHolder>(options) {
+
+            @Override
+            public int getItemCount() {
+                return super.getItemCount();
+            }
+
+            @Override
+            protected void onBindViewHolder(TaskViewHolder holder, int position, Task model) {
+                holder.setName(model.getName());
+                holder.setTime(model.getTime());
+
+            }
+
+            @Override
+            public TaskViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_row,
+                        parent, false);
+                return new TaskViewHolder(view);
+            }
+        };
+
+        array.startListening();
         array.notifyDataSetChanged();
         mTaskList.setAdapter(array);
-        array.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        array.stopListening();
+        //array.stopListening();
     }
 
     @Override

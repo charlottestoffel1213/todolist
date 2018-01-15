@@ -35,7 +35,7 @@
             android:onClick="showTimePickerDialog" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/peeked_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -57,6 +57,7 @@
             android:id="@+id/imageButton" />
 
         <TextView
+            android:id="@+id/peeked_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
