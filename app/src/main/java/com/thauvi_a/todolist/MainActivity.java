@@ -47,19 +47,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static class TaskViewHolder extends RecyclerView.ViewHolder{
-        public TaskViewHolder(View itemView) {
+    private static class TaskViewHolder extends RecyclerView.ViewHolder{
+        private TaskViewHolder(View itemView) {
             super(itemView);
             View mView = itemView;
         }
-        public void setName(String name)
+        private void setName(String name)
         {
             TextView task_name = itemView.findViewById(R.id.task_name);
             task_name.setText(name);
 
         }
 
-        public void setDate(String date)
+        private void setDate(String date)
         {
             TextView task_date = itemView.findViewById(R.id.task_date);
             task_date.setText(date);

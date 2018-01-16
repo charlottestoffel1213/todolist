@@ -145,7 +145,7 @@ public class AddTaskActivity extends AppCompatActivity {
         if (id == R.id.action_save) {
             myRef = db.getInstance().getReference().child("Tasks");
             DatabaseReference newTask = myRef.push();
-            newTask.child("time").setValue(dueDate.toString());
+            newTask.child("date").setValue(dueDate.toString());
             newTask.child("name").setValue(name);
             AddTaskActivity.this.finish();
             return true;
