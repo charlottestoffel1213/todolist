@@ -1,9 +1,9 @@
 package com.thauvi_a.todolist;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +29,11 @@ public class OldTaskActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.oldtask_activity);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        mTaskList = findViewById(R.id.task_list);
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Finished");
 
     }
 
@@ -53,7 +57,6 @@ public class OldTaskActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -63,7 +66,7 @@ public class OldTaskActivity extends AppCompatActivity {
                         .setQuery(mDatabase, Task.class)
                         .build();
 
-        final FirebaseRecyclerAdapter<Task, OldTaskActivity.TaskViewHolder> array = new FirebaseRecyclerAdapter<Task, MainActivity.TaskViewHolder>(options) {
+        final FirebaseRecyclerAdapter<Task, TaskViewHolder> array = new FirebaseRecyclerAdapter<Task, TaskViewHolder>(options) {
 
             @Override
             public int getItemCount() {
@@ -71,27 +74,16 @@ public class OldTaskActivity extends AppCompatActivity {
             }
 
             @Override
-            protected void onBindViewHolder(OldTaskActivity.TaskViewHolder holder, int position, Task model) {
+            protected void onBindViewHolder(TaskViewHolder holder, int position, Task model) {
                 holder.setName(model.getName());
                 holder.setDate(model.getDate());
-
-                final String key = getRef(position).getKey();
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(OldTaskActivity.this, TaskActivity.class);
-                        intent.putExtra("key", key);
-                        startActivity(intent);
-
-                    }
-                });
             }
 
             @Override
-            public OldTaskActivity.TaskViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            public TaskViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_row,
                         parent, false);
-                return new OldTaskActivity.TaskViewHolder(view);
+                return new TaskViewHolder(view);
             }
         };
 
@@ -99,4 +91,5 @@ public class OldTaskActivity extends AppCompatActivity {
         array.notifyDataSetChanged();
         mTaskList.setAdapter(array);
     }
+
 }
