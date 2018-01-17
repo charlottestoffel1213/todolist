@@ -2,6 +2,7 @@ package com.thauvi_a.todolist;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -33,6 +34,7 @@ public class OldTaskActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mTaskList = findViewById(R.id.task_list);
+        mTaskList.setLayoutManager(new LinearLayoutManager(this));
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Finished");
 
     }
@@ -76,7 +78,7 @@ public class OldTaskActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(TaskViewHolder holder, int position, Task model) {
                 holder.setName(model.getName());
-                holder.setDate(model.getDate());
+                holder.setDate("Finished the " + model.getDate());
             }
 
             @Override
