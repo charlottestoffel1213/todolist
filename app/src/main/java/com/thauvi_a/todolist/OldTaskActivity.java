@@ -1,5 +1,6 @@
 package com.thauvi_a.todolist;
 
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.google.firebase.database.FirebaseDatabase;
@@ -14,4 +15,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class OldTaskActivity extends AppCompatActivity {
     private FirebaseDatabase db;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+    }
 }
