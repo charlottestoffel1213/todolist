@@ -44,6 +44,7 @@ public class AddTaskActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_task);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Adding task");
         setSupportActionBar(toolbar);
 
     }

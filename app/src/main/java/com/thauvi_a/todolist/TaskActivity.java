@@ -35,6 +35,7 @@ public class TaskActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.task);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Task");
         setSupportActionBar(toolbar);
 
         key = getIntent().getExtras().getString("key");

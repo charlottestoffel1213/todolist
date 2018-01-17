@@ -32,6 +32,7 @@ public class OldTaskActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.oldtask_activity);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Finished");
         setSupportActionBar(toolbar);
         mTaskList = findViewById(R.id.task_list);
         mTaskList.setLayoutManager(new LinearLayoutManager(this));

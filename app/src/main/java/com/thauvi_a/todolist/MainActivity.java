@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("ToDo");
         setSupportActionBar(toolbar);
         mTaskList = findViewById(R.id.task_list);
         mTaskList.setLayoutManager(new LinearLayoutManager(this));
