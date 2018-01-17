@@ -96,6 +96,16 @@ public class MainActivity extends AppCompatActivity {
                 holder.setName(model.getName());
                 holder.setDate(model.getDate());
 
+                final String key = getRef(position).getKey();
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, TaskActivity.class);
+                        intent.putExtra("key", key);
+                        startActivity(intent);
+
+                    }
+                });
             }
 
             @Override

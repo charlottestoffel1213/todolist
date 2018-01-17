@@ -23,6 +23,11 @@
             android:label="@string/add_task_name_activity"
             android:theme="@style/AppTheme">
         </activity>
+        <activity
+            android:name=".TaskActivity"
+            android:label="@string/task_activity_name_activity"
+            android:theme="@style/AppTheme">
+        </activity>
 
     </application>
 

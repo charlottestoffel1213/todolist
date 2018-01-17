@@ -118,7 +118,7 @@ public class AddTaskActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_task, menu);
+        getMenuInflater().inflate(R.menu.menu_addtask, menu);
         return true;
     }
 
@@ -150,7 +150,6 @@ public class AddTaskActivity extends AppCompatActivity {
             AddTaskActivity.this.finish();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
