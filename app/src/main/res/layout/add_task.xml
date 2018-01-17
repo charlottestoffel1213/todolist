@@ -8,66 +8,74 @@
 
     <include layout="@layout/toolbar"/>
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/background"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/desc"
-        android:hint="@string/desc"/>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="299dp">
-
-        <ImageButton
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/ic_date_range_black_24dp"
-            android:minHeight="60dp"
-            android:minWidth="60dp"
-            android:onClick="showDatePickerDialog" />
-
+        android:layout_height="match_parent">
         <TextView
-            android:id="@+id/peeked_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/date"
-            android:layout_marginTop="19dp"
-            android:hint="@string/date"
-            android:textSize="25sp" />
+            android:text="@string/title"/>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/date"
-            android:layout_below="@+id/date"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/ic_access_time_black_36dp"
-            android:minHeight="60dp"
-            android:minWidth="60dp"
-            android:onClick="showTimePickerDialog"
-            android:id="@+id/imageButton" />
-
-        <TextView
-            android:id="@+id/peeked_time"
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/imageButton"
-            android:layout_marginTop="13dp"
-            android:hint="@string/time"
-            android:textSize="25sp" />
+            android:id="@+id/desc"
+            android:hint="@string/desc"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="299dp">
+
+            <ImageButton
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="300dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/ic_date_range_black_24dp"
+                android:minHeight="60dp"
+                android:minWidth="60dp"
+                android:onClick="showDatePickerDialog" />
+
+            <TextView
+                android:id="@+id/peeked_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/date"
+                android:layout_marginTop="19dp"
+                android:hint="@string/date"
+                android:textSize="25sp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/date"
+                android:layout_below="@+id/date"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/ic_access_time_black_36dp"
+                android:minHeight="60dp"
+                android:minWidth="60dp"
+                android:onClick="showTimePickerDialog"
+                android:id="@+id/imageButton" />
+
+            <TextView
+                android:id="@+id/peeked_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/imageButton"
+                android:layout_marginTop="13dp"
+                android:hint="@string/time"
+                android:textSize="25sp" />
 
 
-    </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
 
 
 
