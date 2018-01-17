@@ -4,34 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     tools:context="com.thauvi_a.todolist.MainActivity">
 
 
-    <include layout="@layout/toolbar"/>
+    <android.support.design.widget.CoordinatorLayout
 
-    <LinearLayout
-    android:paddingTop="60dp"
-    android:paddingEnd="16dp"
-    android:paddingStart="16dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <android.support.v7.widget.RecyclerView
+        android:background="@drawable/background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/task_list">
+        android:layout_height="match_parent">
+        <include layout="@layout/toolbar"/>
 
-    </android.support.v7.widget.RecyclerView>
-</LinearLayout>
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        app:fabSize="normal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_add_circle_outline_black_24dp"
-        />
+        <LinearLayout
+            android:paddingTop="60dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/task_list">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            app:fabSize="normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/ic_add_circle_outline_black_24dp"
+            />
+    </android.support.design.widget.CoordinatorLayout>
+
+
 
 </android.support.design.widget.CoordinatorLayout>
