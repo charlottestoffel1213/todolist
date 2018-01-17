@@ -28,7 +28,11 @@
             android:label="@string/task_activity_name_activity"
             android:theme="@style/AppTheme">
         </activity>
-
+        <activity
+            android:name=".OldTaskActivity"
+            android:label="@string/oldtask_activity_name_activity"
+            android:theme="@style/AppTheme">
+        </activity>
     </application>
 
 </manifest>

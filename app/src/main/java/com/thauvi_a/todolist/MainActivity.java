@@ -68,12 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-/*
-    public FirebaseRecyclerAdapter<Task, TaskViewHolder> getArray()
-    {
-        return this.array;
-    }*/
-
     @Override
     protected void onStart() {
         super.onStart();

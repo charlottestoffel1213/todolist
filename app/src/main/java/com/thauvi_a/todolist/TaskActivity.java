@@ -13,6 +13,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+
 
 /**
  * Created by thauvi_a on 1/15/18.
@@ -79,7 +81,7 @@ public class TaskActivity extends AppCompatActivity {
             mDatabase.child(key).removeValue();
             mDatabase = FirebaseDatabase.getInstance().getReference().child("Finished");
             DatabaseReference oldTask = mDatabase.push();
-            oldTask.child("date").setValue(date.getText());
+            oldTask.child("date").setValue(Calendar.getInstance().getTime().toString());
             oldTask.child("name").setValue(name.getText());
             TaskActivity.this.finish();
             return true;
