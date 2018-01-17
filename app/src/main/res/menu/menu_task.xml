@@ -1,10 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.thauvi_a.todolist.AddTaskActivity">
+    tools:context="com.thauvi_a.todolist.TaskActivity">
     <item
-        android:id="@+id/action_save"
+        android:id="@+id/done"
         android:orderInCategory="100"
-        android:title="@string/save"
+        android:title="@string/done"
         app:showAsAction="always" />
 </menu>
