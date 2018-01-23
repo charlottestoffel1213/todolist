@@ -36,8 +36,6 @@ public class OldTaskActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Finished");
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.ic_arrow_back_black_24dp);
         mTaskList = findViewById(R.id.task_list);
         mTaskList.setLayoutManager(new LinearLayoutManager(this));
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Finished");
