@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">todolist</string>
 
-    <string name="add_task_name_activity">addTaskActivity</string>
+    <string name="addtask_name_activity">addTaskActivity</string>
     <string name="task_name_activity">task</string>
     <string name="task_activity_name_activity">taskActivity</string>
     <string name="oldtask_activity_name_activity">oldTaskActivity</string>
