@@ -191,9 +191,10 @@ public class AddTaskActivity extends AppCompatActivity {
             if (dateIsEmpty)
             {
                 newTask.child("date").setValue("no date registered");
-
             }
-            newTask.child("date").setValue(dueDate.toString());
+            else {
+                newTask.child("date").setValue(dueDate.toString());
+            }
             newTask.child("name").setValue(name);
             AddTaskActivity.this.finish();
             return true;
