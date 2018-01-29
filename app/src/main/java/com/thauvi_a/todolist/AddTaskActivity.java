@@ -37,7 +37,8 @@ public class AddTaskActivity extends AppCompatActivity {
     private TextView date;
     private TextView time;
     DatabaseReference myRef;
-    EditText editText;
+    EditText name;
+    EditText desc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,9 +132,11 @@ public class AddTaskActivity extends AppCompatActivity {
         retrieveFieldsValue();
         SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd hh:mm");
         int id = item.getItemId();
-        editText = findViewById(R.id.desc);
+        name = findViewById(R.id.name);
+        desc = findViewById(R.id.desc);
         Date dueDate;
-        String name = editText.getText().toString();
+        String name = this.name.getText().toString();
+        String desc = this.desc.getText().toString();
         try {
             dueDate = dateFormatter.parse(date.getText().toString() + " " + time.getText().toString());
         }
@@ -146,6 +149,7 @@ public class AddTaskActivity extends AppCompatActivity {
         if (id == R.id.action_save) {
             myRef = db.getInstance().getReference().child("Tasks");
             DatabaseReference newTask = myRef.push();
+            newTask.child("desc").setValue(desc);
             newTask.child("date").setValue(dueDate.toString());
             newTask.child("name").setValue(name);
             AddTaskActivity.this.finish();

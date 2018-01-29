@@ -9,10 +9,11 @@
     <string name="done">done</string>
     <string name="delete">delete</string>
 
-    <string name="desc">Enter a Task</string>
+    <string name="name">Enter the title</string>
+    <string name="desc">Enter the description</string>
     <string name="add">add a task</string>
     <string name="save">save</string>
-    <string name="title">What is to be done</string>
+    <string name="tobedone">What is to be done</string>
     <string name="date">Due date</string>
     <string name="time">Due time</string>
     <string name="notif">Notifications</string>

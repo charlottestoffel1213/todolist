@@ -64,6 +64,13 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        private void setDesc(String desc)
+        {
+            TextView task_desc = itemView.findViewById(R.id.task_desc);
+            task_desc.setText(desc);
+
+        }
+
         private void setDate(String date)
         {
             TextView task_date = itemView.findViewById(R.id.task_date);
@@ -92,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(TaskViewHolder holder, int position, Task model) {
                 holder.setName(model.getName());
+                holder.setDesc(model.getDesc());
                 holder.setDate(model.getDate());
 
                 final String key = getRef(position).getKey();

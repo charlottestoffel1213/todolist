@@ -11,10 +11,12 @@ package com.thauvi_a.todolist;
 public class    Task {
     private     String name;
     private     String date;
+    private     String desc;
 
-    public Task(String name, String date){
+    public Task(String name, String date, String desc){
         this.name = name;
         this.date = date;
+        this.desc = desc;
     }
 
     public Task(){
@@ -35,5 +37,13 @@ public class    Task {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 }

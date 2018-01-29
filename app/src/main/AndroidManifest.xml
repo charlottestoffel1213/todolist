@@ -20,7 +20,7 @@
         </activity>
         <activity
             android:name=".AddTaskActivity"
-            android:label="@string/add_task_name_activity"
+            android:label="@string/addtask_name_activity"
             android:theme="@style/AppTheme">
         </activity>
         <activity

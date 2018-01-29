@@ -29,6 +29,7 @@ public class TaskActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private TextView name;
     private TextView date;
+    private TextView desc;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class TaskActivity extends AppCompatActivity {
         key = getIntent().getExtras().getString("key");
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Tasks");
         name = findViewById(R.id.name);
+        desc = findViewById(R.id.desc);
         date = findViewById(R.id.date);
 
         mDatabase.child(key).addValueEventListener(new ValueEventListener() {
@@ -48,6 +50,7 @@ public class TaskActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 try {
                     name.setText(dataSnapshot.child("name").getValue().toString());
+                    desc.setText(dataSnapshot.child("desc").getValue().toString());
                     date.setText(dataSnapshot.child("date").getValue().toString());
                 }
                 catch (NullPointerException e) {
@@ -84,6 +87,7 @@ public class TaskActivity extends AppCompatActivity {
             DatabaseReference oldTask = mDatabase.push();
             oldTask.child("date").setValue(Calendar.getInstance().getTime().toString());
             oldTask.child("name").setValue(name.getText());
+            oldTask.child("desc").setValue(desc.getText());
             TaskActivity.this.finish();
             return true;
         }
