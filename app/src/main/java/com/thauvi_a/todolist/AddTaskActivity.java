@@ -1,13 +1,17 @@
 package com.thauvi_a.todolist;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Build;
 import android.support.v4.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -129,6 +133,7 @@ public class AddTaskActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        boolean dateIsEmpty = false;
         retrieveFieldsValue();
         SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd hh:mm");
         int id = item.getItemId();
@@ -142,14 +147,52 @@ public class AddTaskActivity extends AppCompatActivity {
         }
         catch (ParseException e)
         {
+            try {
+                dueDate = dateFormatter.parse("2016-01-05 05:05");
+                dateIsEmpty = true;
+            }
+
+            catch (ParseException f) {
+                f.getMessage();
+                return false;
+            }
+        }
+        if (name.isEmpty())
+        {
+            AlertDialog.Builder builder;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
+            } else {
+                builder = new AlertDialog.Builder(this);
+            }
+            builder.setTitle("Title cannot be empty")
+                    .setMessage("Please fill the title section")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    })
+                    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
             return false;
         }
+        if (desc.isEmpty())
+            desc = "no description registered";
+
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_save) {
             myRef = db.getInstance().getReference().child("Tasks");
             DatabaseReference newTask = myRef.push();
             newTask.child("desc").setValue(desc);
+            if (dateIsEmpty)
+            {
+                newTask.child("date").setValue("no date registered");
+
+            }
             newTask.child("date").setValue(dueDate.toString());
             newTask.child("name").setValue(name);
             AddTaskActivity.this.finish();
