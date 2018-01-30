@@ -1,13 +1,19 @@
 package com.thauvi_a.todolist;
 
+import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.media.RingtoneManager;
 import android.os.Build;
 import android.support.v4.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.format.DateFormat;
@@ -133,6 +139,8 @@ public class AddTaskActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+
+
         boolean dateIsEmpty = false;
         retrieveFieldsValue();
         SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd hh:mm");
@@ -144,21 +152,16 @@ public class AddTaskActivity extends AppCompatActivity {
         String desc = this.desc.getText().toString();
         try {
             dueDate = dateFormatter.parse(date.getText().toString() + " " + time.getText().toString());
-        }
-        catch (ParseException e)
-        {
+        } catch (ParseException e) {
             try {
                 dueDate = dateFormatter.parse("2016-01-05 05:05");
                 dateIsEmpty = true;
-            }
-
-            catch (ParseException f) {
+            } catch (ParseException f) {
                 f.getMessage();
                 return false;
             }
         }
-        if (name.isEmpty())
-        {
+        if (name.isEmpty()) {
             AlertDialog.Builder builder;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
@@ -188,11 +191,9 @@ public class AddTaskActivity extends AppCompatActivity {
             myRef = db.getInstance().getReference().child("Tasks");
             DatabaseReference newTask = myRef.push();
             newTask.child("desc").setValue(desc);
-            if (dateIsEmpty)
-            {
+            if (dateIsEmpty) {
                 newTask.child("date").setValue("no date registered");
-            }
-            else {
+            } else {
                 newTask.child("date").setValue(dueDate.toString());
             }
             newTask.child("name").setValue(name);
@@ -202,3 +203,4 @@ public class AddTaskActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
