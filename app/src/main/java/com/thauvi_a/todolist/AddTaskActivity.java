@@ -29,7 +29,6 @@ import android.widget.TimePicker;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.security.PrivateKey;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -48,8 +47,8 @@ public class AddTaskActivity extends AppCompatActivity {
     private TextView date;
     private TextView time;
     DatabaseReference myRef;
-    TextView name;
-    TextView desc;
+    EditText name;
+    EditText desc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
