@@ -29,7 +29,7 @@
             android:label="@string/task_activity_name_activity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".OldTaskActivity"
+            android:name=".FinishedTaskActivity"
             android:label="@string/oldtask_activity_name_activity"
             android:theme="@style/AppTheme" />
 

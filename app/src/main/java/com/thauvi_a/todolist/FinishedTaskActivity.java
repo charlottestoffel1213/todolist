@@ -1,5 +1,8 @@
 package com.thauvi_a.todolist;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,7 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
  * ******************************
  */
 
-public class OldTaskActivity extends AppCompatActivity {
+public class FinishedTaskActivity extends AppCompatActivity {
     private RecyclerView mTaskList;
     private DatabaseReference mDatabase;
 
@@ -87,9 +90,26 @@ public class OldTaskActivity extends AppCompatActivity {
                 holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View view) {
+                        AlertDialog.Builder builder;
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            builder = new AlertDialog.Builder(FinishedTaskActivity.this, android.R.style.Theme_Material_Dialog_Alert);
+                        } else {
+                            builder = new AlertDialog.Builder(FinishedTaskActivity.this);
+                        }
+                        builder.setTitle("DELETE")
+                                .setMessage("Do you want to delete this finished task ?")
+                                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        mDatabase.child(key).removeValue();
+                                    }
+                                })
+                                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                    }
+                                })
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .show();
 
-
-                        mDatabase.child(key).removeValue();
                         return true;
                     }
                 });
