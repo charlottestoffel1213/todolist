@@ -82,6 +82,17 @@ public class OldTaskActivity extends AppCompatActivity {
             protected void onBindViewHolder(TaskViewHolder holder, int position, Task model) {
                 holder.setName(model.getName());
                 holder.setDate("Finished the " + model.getDate());
+                final String key = getRef(position).getKey();
+
+                holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+
+
+                        mDatabase.child(key).removeValue();
+                        return true;
+                    }
+                });
             }
 
             @Override

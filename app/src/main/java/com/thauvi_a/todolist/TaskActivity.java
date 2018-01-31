@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -27,9 +28,9 @@ import java.util.Calendar;
 public class TaskActivity extends AppCompatActivity {
     private String key;
     private DatabaseReference mDatabase;
-    private TextView name;
-    private TextView date;
-    private TextView desc;
+    private EditText name;
+    private EditText date;
+    private EditText desc;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class TaskActivity extends AppCompatActivity {
         name = findViewById(R.id.name);
         desc = findViewById(R.id.desc);
         date = findViewById(R.id.date);
+
 
         mDatabase.child(key).addValueEventListener(new ValueEventListener() {
             @Override
@@ -81,14 +83,33 @@ public class TaskActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+
         if (id == R.id.done) {
+            name = findViewById(R.id.name);
+            desc = findViewById(R.id.desc);
+            date = findViewById(R.id.date);
             mDatabase.child(key).removeValue();
             mDatabase = FirebaseDatabase.getInstance().getReference().child("Finished");
             DatabaseReference oldTask = mDatabase.push();
             oldTask.child("date").setValue(Calendar.getInstance().getTime().toString());
-            oldTask.child("name").setValue(name.getText());
-            oldTask.child("desc").setValue(desc.getText());
+            oldTask.child("name").setValue(name.getText().toString());
+            oldTask.child("desc").setValue(desc.getText().toString());
             TaskActivity.this.finish();
+            return true;
+        }
+
+        else if (id == R.id.delete) {
+            mDatabase.child(key).removeValue();
+            this.finish();
+        }
+
+        else if (id == R.id.save) {
+            name = findViewById(R.id.name);
+            desc = findViewById(R.id.desc);
+            date = findViewById(R.id.date);
+            mDatabase.child(key).child("name").setValue(name.getText().toString());
+            mDatabase.child(key).child("desc").setValue(desc.getText().toString());
+            this.finish();
             return true;
         }
 
