@@ -14,6 +14,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import java.util.Calendar;
 
 
@@ -29,7 +31,7 @@ public class TaskActivity extends AppCompatActivity {
     private String key;
     private DatabaseReference mDatabase;
     private EditText name;
-    private EditText date;
+    private TextView date;
     private EditText desc;
 
     @Override
