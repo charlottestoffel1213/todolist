@@ -8,7 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/todolist" />
+            <option value="$PROJECT_DIR$/todolist_project" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
