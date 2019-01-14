@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#stoffelcharlotte project
+
 ##############################################################################
 ##
 ##  Gradle start up script for UN*X
