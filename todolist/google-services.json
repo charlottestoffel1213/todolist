@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "1094399608568",
-    "firebase_url": "https://todolist-ac79b.firebaseio.com",
-    "project_id": "todolist-ac79b",
-    "storage_bucket": "todolist-ac79b.appspot.com"
+    "project_number": "370563894450",
+    "firebase_url": "https://todolist-bc8dd.firebaseio.com",
+    "project_id": "todolist-bc8dd",
+    "storage_bucket": "todolist-bc8dd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1094399608568:android:ea4edfd009483492",
+        "mobilesdk_app_id": "1:370563894450:android:1c48f1d4d38f4a7f",
         "android_client_info": {
-          "package_name": "com.thauvi_a.todolist"
+          "package_name": "com.stoffelcharlotte.todolist"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1094399608568-b4gmk23kfgf2f5iesvn11ghn25feas4s.apps.googleusercontent.com",
+          "client_id": "370563894450-03ll231hkl5p24i4s2511p8sbi9uji48.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.thauvi_a.todolist",
-            "certificate_hash": "f98de88d5e58016b59f282227b7ff0edc9443450"
+            "package_name": "com.stoffelcharlotte.todolist",
+            "certificate_hash": "33ce62cf8cd0ca58cb3f73bc0662d153c6d74d02"
           }
         },
         {
-          "client_id": "1094399608568-3koakrh5v41c3j4gfc097pbr13tcu1ea.apps.googleusercontent.com",
+          "client_id": "370563894450-aaobqamocidlcd8vfe0c10391qalgq69.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBL1aBVX8pKW3xyzLmt7tss051-qpM-zEE"
+          "current_key": "AIzaSyAh9sT2jUJjfpgjpAztKysd2yTfz64hVWQ"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1094399608568-3koakrh5v41c3j4gfc097pbr13tcu1ea.apps.googleusercontent.com",
+              "client_id": "370563894450-aaobqamocidlcd8vfe0c10391qalgq69.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

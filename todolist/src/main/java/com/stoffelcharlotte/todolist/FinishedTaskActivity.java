@@ -1,4 +1,4 @@
-package com.thauvi_a.todolist;
+package com.stoffelcharlotte.todolist;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -19,12 +19,11 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.stoffelcharlotte.todolist.R;
 
 /**
- * Created by thauvi_a on 1/17/18.
- * <p>
+ * Created by stoffelcharlotte on 10/12/18.
  * ******************************
- * * BOOM BITCH GET OUT THE WAY *
  * ******************************
  */
 

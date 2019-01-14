@@ -4,19 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.thauvi_a.todolist.FinishedTaskActivity">
+    tools:context="com.stoffelcharlotte.todolist.FinishedTaskActivity">
 
 
     <include layout="@layout/toolbar"/>
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/turquoise"
+        android:text="To do List"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+
+        />
+
     <LinearLayout
-        android:background="@drawable/background"
+        android:background="@color/turquoise"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
+
+
+
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/task_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/task_list">
+            android:textColor="@color/white">
 
         </android.support.v7.widget.RecyclerView>
     </LinearLayout>

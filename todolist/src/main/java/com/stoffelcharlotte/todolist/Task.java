@@ -1,10 +1,8 @@
-package com.thauvi_a.todolist;
+package com.stoffelcharlotte.todolist;
 
 /**
- * Created by thauvi_a on 1/13/18.
- * <p>
+ * Created by stoffelcharlotte on 10/12/18.
  * ******************************
- * * BOOM BITCH GET OUT THE WAY *
  * ******************************
  */
 

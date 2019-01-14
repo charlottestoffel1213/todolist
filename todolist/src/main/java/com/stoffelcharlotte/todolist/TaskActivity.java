@@ -1,4 +1,4 @@
-package com.thauvi_a.todolist;
+package com.stoffelcharlotte.todolist;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -21,7 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
+import com.stoffelcharlotte.todolist.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -30,10 +30,8 @@ import java.util.Date;
 
 
 /**
- * Created by thauvi_a on 1/15/18.
- * <p>
+ * Created by stoffelcharlotte on 10/12/18.
  * ******************************
- * * BOOM BITCH GET OUT THE WAY *
  * ******************************
  */
 

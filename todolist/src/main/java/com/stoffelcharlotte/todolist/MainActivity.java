@@ -1,4 +1,4 @@
-package com.thauvi_a.todolist;
+package com.stoffelcharlotte.todolist;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -11,9 +11,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -21,6 +21,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.stoffelcharlotte.todolist.R;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mTaskList;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         mTaskList.setLayoutManager(new LinearLayoutManager(this));
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Tasks");
 
+        //add an new task by clicking on the button
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

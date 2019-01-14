@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.thauvi_a.todolist.MainActivity">
+    tools:context="com.stoffelcharlotte.todolist.MainActivity">
 
 <LinearLayout
     android:orientation="vertical"
@@ -15,13 +15,14 @@
     <include layout="@layout/toolbar" />
 
     <LinearLayout
-        android:background="@drawable/background"
+        android:background="@color/turquoise"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/task_list"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </android.support.v7.widget.RecyclerView>
@@ -37,6 +38,7 @@
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         app:fabSize="normal"
+        android:background="@color/turquoise"
         android:minWidth="50dp"
         android:minHeight="50dp"
         android:layout_width="wrap_content"
